@@ -7,3 +7,10 @@ REPORTS = {
     'median_coffee': MedianCoffeeReport,
 }
 
+def main():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--report", nargs="+", required=True)
+    parser.add_argument("--report", required=True)
+
+    args = parser.parse_args()
