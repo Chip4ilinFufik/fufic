@@ -1,4 +1,5 @@
 import argparse
+from unittest import result
 from tabulate import tabulate
 from reader import read_files
 from reports.median_coffee import MedianCoffeeReport
@@ -19,4 +20,13 @@ def main():
     if args.report not in REPORTS:
         raise ValueError(f"Неизвестный отчет {args.report}")
     
-    
+    data - read_files(args.files)
+
+    report_class = REPORTS[args.report]
+    report = report_class()
+
+    result = report.generate(data)
+    print(tabulate(result, headers=["student", "coffee"]))
+
+if __name__ == "__main__":
+    main()
