@@ -14,3 +14,9 @@ def main():
     parser.add_argument("--report", required=True)
 
     args = parser.parse_args()
+
+
+    if args.report not in REPORTS:
+        raise ValueError(f"Неизвестный отчет {args.report}")
+    
+    
