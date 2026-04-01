@@ -1,3 +1,3 @@
 class BaseReport:
-    def generate(selt=f, data):
+    def generate(self, data):
         raise NotImplementedError('Метод generate должен быть реализован ')

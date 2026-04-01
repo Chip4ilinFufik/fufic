@@ -1,11 +1,11 @@
 from collections import defaultdict
-import re
 from statistics import median
 
-from report.base import BaseReport
+from reports.base import BaseReport
 
 class MedianCoffeeReport(BaseReport):
-    def generate(self, date):
+    def generate(self, data):
+        grouped = defaultdict(list)
 
         for r in data:
             student = r['student']
