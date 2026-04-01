@@ -15,4 +15,7 @@ class MedianCoffeeReport(BaseReport):
         for student, value in grouped.items():
             med = median(value)
             result.append((student, med))
-            
+        
+        result.sort(key=lambda x: x[1], reverse=True)
+
+        return result
