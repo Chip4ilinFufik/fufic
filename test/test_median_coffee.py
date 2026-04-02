@@ -1,6 +1,7 @@
 from reports.median_coffee import MedianCoffeeReport
 
 def test_median_single_student():
+
     data =[
         {"student": "Alice", "coffee_spent": 250},
         {"student": "Bob", "coffee_spent": 300},
@@ -11,3 +12,17 @@ def test_median_single_student():
     
 
     assert ("Alice", 250) in result
+
+def test_multiple_students():
+    data = [
+        {"student": "Ivan", "coffee_spent": 100},
+        {"student": "Ivan", "coffee_spent": 200},
+        {"student": "Anna", "coffee_spent": 300},
+        {"student": "Anna", "coffee_spent": 500},
+    ]
+
+    report = MedianCoffeeReport()
+    result = report.generate(data)
+
+    assert ("Ivan", 150) in result
+    assert ("Anna", 400) in result
